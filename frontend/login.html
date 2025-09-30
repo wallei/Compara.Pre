@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <script>
+        // Verificar si hay un usuario logueado
+        document.addEventListener('DOMContentLoaded', function() {
+            const userData = localStorage.getItem('user');
+            if (userData) {
+                window.location.href = 'index.html';
+            }
+        });
+
+        async function iniciarSesion(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const mensajeError = document.getElementById('mensajeError');
+            
+            // Validación básica
+            if (!email || !password) {
+                mensajeError.textContent = 'Por favor completa todos los campos';
+                return;
+            }
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password }),
+                    credentials: 'include' // Importante para cookies si las usas
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.message || 'Error al iniciar sesión');
+                }
+                
+                // Guardar datos del usuario en localStorage
+                localStorage.setItem('user', JSON.stringify(data.usuario));
+                window.location.href = 'index.html';
+                
+            } catch (error) {
+                console.error('Error en la petición:', error);
+                mensajeError.textContent = error.message || 'Error de conexión con el servidor';
+                
+                // Mostrar detalles adicionales en consola para depuración
+                if (error.response) {
+                    console.error('Respuesta del servidor:', await error.response.text());
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Iniciar Sesión</h1>
+        
+        <form onsubmit="iniciarSesion(event)">
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" required>
+            </div>
+            
+            <div>
+                <button type="submit">Iniciar Sesión</button>
+            </div>
+        </form>
+        
+        <div>
+            <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        </div>
+        
+        <div>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+    </div>
+</body>
+</html>
