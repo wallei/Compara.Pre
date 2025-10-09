@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="olvido-contrasena.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="recovery-card">
+        <div class="logo-container">
+            <img src="../Imagenes/Compara.Pre_solo.png" alt="Logo" class="logo-image">
+        </div>
+
+        <h1>Recuperar Contraseña</h1>
+        <p class="subtitle">Ingresa tu correo electrónico y te enviaremos las instrucciones para restablecer tu contraseña</p>
+
+        <form>
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <div class="input-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <input type="email" placeholder="Correo electrónico" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-recovery">Enviar Instrucciones</button>
+
+            <div class="footer-links">
+                <a href="../Login/login.html">← Volver al Inicio de Sesión</a>
+            </div>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <p>¡Las instrucciones han sido enviadas a tu correo!</p>
+        </div>
+    </div>
+
+</body>
+</html>

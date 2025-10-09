@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: 
+        url('../Imagenes/defondo.png'),
+        linear-gradient(to bottom, #173870 0%, #112559 50%, #414d66 100%);
+    background-position: center;
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-card {
+    background: rgba(32, 68, 147, 0.85);
+    border: 3px solid rgba(135, 206, 250, 0.5);
+    border-radius: 30px;
+    padding: 80px 50px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;  
+    margin-top: 100px; 
+}
+
+.logo-container {
+    text-align: center;
+    position: absolute; 
+    top: -150px;     
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.logo-image {
+    width: 300px;  
+    height: 300px; 
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3)); 
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-icon {
+    width: 45px;
+    height: 45px;
+    background: #26a69a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    flex-shrink: 0;
+    border-radius: 50%;  
+    margin-left: 5px;    
+}
+
+.input-icon i {
+    font-size: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+.remember-section {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 3px;
+    cursor: pointer;
+    background: transparent;
+    appearance: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-custom:checked {
+    background: white;
+}
+
+.checkbox-custom:checked::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #173870;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.remember-label {
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background: white;
+    color: #061848;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-login:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
