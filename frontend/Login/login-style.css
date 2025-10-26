@@ -7,8 +7,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: 
-        url('../Imagenes/defondo.png'),
-        linear-gradient(to bottom, #173870 0%, #112559 50%, #414d66 100%);
+     url('../Imagenes/defondo.png'),
+    linear-gradient(to bottom, #173870 0%, #112559 50%, #414d66 100%);
     background-position: center;
     background-blend-mode: overlay;
     display: flex;

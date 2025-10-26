@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-    body {
-        animation: fadeIn 0.3s ease-out;
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+        body {
+            animation: fadeIn 0.3s ease-out;
+        }
 
-</style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <div class="registro-card">
         <div class="logo-container">
@@ -27,13 +33,13 @@
 
         <h1>Registro de Usuario</h1>
 
-        <form>
+        <form id="formRegistro">
             <div class="form-group">
                 <div class="input-wrapper">
                     <div class="input-icon">
                         <i class="fas fa-user"></i>
                     </div>
-                    <input type="text" placeholder="Nombre" required>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
                 </div>
             </div>
 
@@ -42,7 +48,7 @@
                     <div class="input-icon">
                         <i class="fas fa-user"></i>
                     </div>
-                    <input type="text" placeholder="Apellido" required>
+                    <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
                 </div>
             </div>
 
@@ -51,7 +57,7 @@
                     <div class="input-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <input type="email" placeholder="Correo electrónico" required>
+                    <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
                 </div>
             </div>
 
@@ -60,7 +66,18 @@
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <input type="password" placeholder="Contraseña" required minlength="6">
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required
+                        minlength="6">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <input type="password" id="password_confirmacion" name="password_confirmacion"
+                        placeholder="Confirmar Contraseña" required minlength="6">
                 </div>
             </div>
 
@@ -71,5 +88,7 @@
             </div>
         </form>
     </div>
+    <script src="../../js/auth.js"></script>
 </body>
+
 </html>
